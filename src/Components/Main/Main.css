@@ -1,0 +1,7 @@
+.Main {
+  grid-area: Main;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem;
+}
