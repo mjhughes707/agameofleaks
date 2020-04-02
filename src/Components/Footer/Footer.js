@@ -9,6 +9,7 @@ function Footer() {
         <a
           href="https://twitter.com/fawnilu_?lang=en"
           target="_blank"
+          rel="noopener noreferrer"
           className="footer-link"
         >
           @fawnilu_

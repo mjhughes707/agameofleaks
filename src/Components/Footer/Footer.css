@@ -1,7 +1,13 @@
 .footer-text {
   font-style: italic;
+  color: darkgray;
 }
 
 .footer-link {
+  color: darkgrey;
   text-decoration: none;
+}
+
+.footer-link:hover {
+  color: rgb(111, 110, 110);
 }
