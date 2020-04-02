@@ -1,4 +1,5 @@
 .Header {
+  grid-area: Header;
   display: flex;
   flex-direction: column;
   justify-content: center;

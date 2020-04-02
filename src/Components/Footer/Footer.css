@@ -1,4 +1,5 @@
 .Footer {
+  grid-area: Footer;
   margin: 0 auto;
   width: 80%;
 }
