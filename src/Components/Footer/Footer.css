@@ -1,5 +1,7 @@
 .Footer {
   grid-area: Footer;
+  display: flex;
+  align-items: flex-end;
   margin: 0 auto;
   width: 80%;
 }
