@@ -1,0 +1,46 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.header-title,
+.header-intro {
+  width: 60%;
+  text-align: center;
+}
+
+.header-title {
+  margin: 0.65rem 0;
+  letter-spacing: 1px;
+}
+
+.header-intro {
+  margin: 3rem 0;
+  letter-spacing: 1px;
+  line-height: 1.25rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.line-single,
+.line-double {
+  margin: 0;
+  width: 80%;
+}
+
+.line-single {
+  border: 1.5px solid black;
+}
+
+.line-double {
+  height: 0.75rem;
+  border-top: 2px solid black;
+  border-right: none;
+  border-bottom: 2px solid black;
+  border-left: none;
+}
