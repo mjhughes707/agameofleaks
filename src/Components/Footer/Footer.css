@@ -1,3 +1,8 @@
+.Footer {
+  margin: 0 auto;
+  width: 80%;
+}
+
 .footer-text {
   font-style: italic;
   color: darkgray;
