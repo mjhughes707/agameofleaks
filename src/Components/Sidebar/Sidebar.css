@@ -1,3 +1,7 @@
 .Sidebar {
   grid-area: Sidebar;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  border-right: 1px solid black;
 }
