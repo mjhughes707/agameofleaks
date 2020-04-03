@@ -2,7 +2,6 @@
   grid-area: Header;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 2rem 0;
 }
@@ -14,7 +13,7 @@
 }
 
 .header-title {
-  margin: 0.65rem 0;
+  margin: 0 0 0.65rem;
   letter-spacing: 1px;
 }
 
