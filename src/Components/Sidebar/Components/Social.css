@@ -1,0 +1,22 @@
+.Social {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.font-awesome {
+  margin: 0.5rem;
+  width: 1rem;
+}
+
+.fa-tumblr {
+  color: #34526f;
+}
+
+.fa-twitter {
+  color: #00acee;
+}
+
+.fa-instagram {
+  color: #3f729b;
+}
