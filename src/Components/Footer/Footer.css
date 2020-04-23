@@ -1,9 +1,11 @@
 .Footer {
   grid-area: Footer;
   display: flex;
+  justify-content: center;
   align-items: flex-end;
   margin: 0 auto;
   width: 80%;
+  max-width: 778px;
 }
 
 .footer-text {
