@@ -3,34 +3,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0;
+  margin: 2rem 0 0;
 }
 
 .header-title,
 .header-intro {
-  width: 60%;
+  width: 75%;
+  max-width: 678px;
   text-align: center;
 }
 
 .header-title {
   margin: 0 0 0.65rem;
-  letter-spacing: 1px;
+  color: #732231;
+  font-family: "Gotu", sans-serif;
+  font-size: 3rem;
 }
 
 .header-intro {
   margin: 3rem 0;
-  letter-spacing: 1px;
-  line-height: 1.25rem;
+  color: #0d0d0d;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5rem;
 }
 
 .underline {
-  text-decoration: underline;
+  border-bottom: 1px solid black;
+  color: #732231;
 }
 
 .line-single,
 .line-double {
   margin: 0;
-  width: 80%;
+  width: 85%;
+  max-width: 778px;
 }
 
 .line-single {
@@ -39,7 +45,7 @@
 
 .line-double {
   height: 0.75rem;
-  border-top: 2px solid black;
+  border-top: 2px solid #732231;
   border-right: none;
   border-bottom: 2px solid black;
   border-left: none;
