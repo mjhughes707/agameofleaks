@@ -1,7 +1,14 @@
 .Main {
   grid-area: Main;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  margin: 2rem;
+}
+
+.font-awesome {
+  cursor: pointer;
+}
+
+.placeholder {
+  width: 52px;
 }
