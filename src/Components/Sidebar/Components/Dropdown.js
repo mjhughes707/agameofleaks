@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { Context } from "../../../Context";
 import "./Dropdown.css";
 
 function Dropdown() {
-  const [searchValue, setSearchValue] = useState({
-    Character: "",
-    Scene: "",
-    Page: "",
-  });
+  const context = useContext(Context);
+  const { get: searchValue, set: setSearchValue } = context.searchValue;
+
   const Categories = ["Character", "Scene", "Page"];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSearchValue({ ...searchValue, [name]: value });
-    console.log(searchValue);
   };
 
   return (

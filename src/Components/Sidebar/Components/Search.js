@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../../Context";
 import "./Search.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-function Search(props) {
-  const { onClick } = props;
+function Search() {
+  const context = useContext(Context);
+  const { get: dropdown, set: setDropdown } = context.dropdown;
 
   return (
     <div className="Search">
-      <button className="search-button" onClick={onClick}>
+      <button className="search-button" onClick={() => setDropdown(!dropdown)}>
         <FontAwesomeIcon icon={faSearch} className="fa-2x" />
       </button>
     </div>
