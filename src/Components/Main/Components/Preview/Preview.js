@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./Preview.css";
 
 function Preview(props) {
-  const { src } = props.scene;
+  const { src } = props;
 
   return (
     <div
@@ -15,7 +15,7 @@ function Preview(props) {
 }
 
 Preview.propTypes = {
-  src: PropTypes.string,
+  src: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
