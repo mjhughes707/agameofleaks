@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { Context } from "../../../../Context";
 import "./Modal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Modal(props) {
-  const { src, currentPage, length, closeModal, prevPage, nextPage } = props;
+  const { src, length, closeModal, prevPage, nextPage } = props;
+  const context = useContext(Context);
+  const { get: prevIndexBegin } = context.prevIndexBegin;
+  const { get: prevIndexEnd } = context.prevIndexEnd;
+  const { get: fullViewIndex } = context.fullViewIndex;
 
   return (
     <div
@@ -13,7 +18,7 @@ function Modal(props) {
       id="modal"
       onClick={(e) => closeModal(e)}
     >
-      {currentPage > 1 ? (
+      {prevIndexBegin > 0 || (prevIndexBegin === 0 && fullViewIndex === 1) ? (
         <FontAwesomeIcon
           icon={faArrowLeft}
           className="modal-font-awesome fa-3x"
@@ -28,7 +33,8 @@ function Modal(props) {
         style={{ backgroundImage: `url(${src})` }}
       />
 
-      {currentPage < length ? (
+      {prevIndexEnd < length ||
+      (prevIndexEnd === length && fullViewIndex === 0) ? (
         <FontAwesomeIcon
           icon={faArrowRight}
           className="modal-font-awesome fa-3x"
@@ -43,7 +49,6 @@ function Modal(props) {
 
 Modal.propTypes = {
   src: PropTypes.string.isRequired,
-  currentPage: PropTypes.number.isRequired,
   length: PropTypes.number.isRequired,
   closeModal: PropTypes.func.isRequired,
   prevPage: PropTypes.func.isRequired,
