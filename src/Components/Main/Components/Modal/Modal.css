@@ -15,8 +15,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: white;
-  width: 455px;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 460px;
   height: 650px;
   margin: 0 6rem;
 }
