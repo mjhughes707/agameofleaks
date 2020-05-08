@@ -6,7 +6,7 @@ function Dropdown() {
   const context = useContext(Context);
   const { get: searchValue, set: setSearchValue } = context.searchValue;
 
-  const Categories = ["Character", "Scene", "Page"];
+  const Categories = ["characters", "scene", "page"];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
