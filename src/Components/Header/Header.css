@@ -27,8 +27,8 @@
   font-size: 1.5rem;
 }
 
-.underline {
-  border-bottom: 1px solid black;
+.might {
+  font-weight: bold;
   color: #732231;
 }
 

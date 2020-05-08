@@ -8,8 +8,8 @@ function Header() {
       <hr className="line-single" />
       <p className="header-intro">
         This project explores what Game of Thrones - Season 8{" "}
-        <span className="underline">might</span> have looked like, based off a
-        few rumored original outlines. The legitimacy of them is irrelevant.
+        <span className="might">might</span> have looked like, based off a few
+        rumored original outlines. The legitimacy of them is irrelevant.
       </p>
       <hr className="line-double" />
     </header>
