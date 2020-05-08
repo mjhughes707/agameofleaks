@@ -3,6 +3,7 @@ import { Context } from "../../Context";
 import "./Main.css";
 import data from "../../data";
 import Preview from "./Components/Preview/Preview";
+import NotFound from "./Components/NotFound/NotFound";
 import Modal from "./Components/Modal/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -67,17 +68,20 @@ function Main() {
     nextPreview();
   };
 
+  // returns only the scenes which meet any of the search conditions
   let dataFiltered = data.Scenes.filter(
     (scene) =>
-      scene.characters.includes(searchValue.characters) ||
+      scene.characters.includes(searchValue.characters.toLowerCase()) ||
       scene.scene === parseInt(searchValue.scene) ||
       scene.page === parseInt(searchValue.page)
   );
 
-  if (dataFiltered.length === 0) {
+  // returns all scenes if no search has yet taken place; e.g. on load
+  if (!searchValue.characters && !searchValue.scene && !searchValue.page) {
     dataFiltered = data.Scenes;
   }
 
+  // ensures a max of only two scenes are displayed at a time
   const activePreviews = dataFiltered.slice(prevIndexBegin, prevIndexEnd);
 
   return (
@@ -102,16 +106,20 @@ function Main() {
         <div className="placeholder" />
       )}
 
-      {activePreviews.map((scene, i) => (
-        <Preview
-          key={scene.page}
-          src={scene.src}
-          onClick={() => {
-            setFullViewIndex(i);
-            setModal(true);
-          }}
-        />
-      ))}
+      {dataFiltered.length > 0 ? (
+        activePreviews.map((scene, i) => (
+          <Preview
+            key={scene.page}
+            src={scene.src}
+            onClick={() => {
+              setFullViewIndex(i);
+              setModal(true);
+            }}
+          />
+        ))
+      ) : (
+        <NotFound />
+      )}
 
       {prevIndexEnd < dataFiltered.length ? (
         <FontAwesomeIcon
