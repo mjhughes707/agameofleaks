@@ -69,12 +69,39 @@ function Main() {
   };
 
   // returns only the scenes which meet any of the search conditions
-  let dataFiltered = data.Scenes.filter(
-    (scene) =>
-      scene.characters.includes(searchValue.characters.toLowerCase()) ||
-      scene.scene === parseInt(searchValue.scene) ||
-      scene.page === parseInt(searchValue.page)
-  );
+  let dataFiltered = data.Scenes.filter((scene) => {
+    // enables a "filter as you type" scenario
+    const characterSearchValue = searchValue.characters.toLowerCase();
+    let characterScenes;
+    scene.characters.forEach((character) => {
+      if (character.startsWith(characterSearchValue)) {
+        characterScenes = scene;
+      }
+    });
+
+    // ugly AF - could do with refactoring at some stage
+    if (searchValue.characters && searchValue.scene && searchValue.page) {
+      return (
+        characterScenes &&
+        scene.scene === parseInt(searchValue.scene) &&
+        scene.page === parseInt(searchValue.page)
+      );
+    } else if (searchValue.characters && searchValue.scene) {
+      return characterScenes && scene.scene === parseInt(searchValue.scene);
+    } else if (searchValue.characters && searchValue.page) {
+      return characterScenes && scene.page === parseInt(searchValue.page);
+    } else if (searchValue.scene && searchValue.page) {
+      return (
+        scene.scene === parseInt(searchValue.scene) &&
+        scene.page === parseInt(searchValue.page)
+      );
+    } else if (searchValue.scene) {
+      return scene.scene === parseInt(searchValue.scene);
+    } else if (searchValue.page) {
+      return scene.page === parseInt(searchValue.page);
+    }
+    return characterScenes;
+  });
 
   // returns all scenes if no search has yet taken place; e.g. on load
   if (!searchValue.characters && !searchValue.scene && !searchValue.page) {
